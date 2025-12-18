@@ -139,7 +139,7 @@ let soda = 1.99;
 
 const buyBurgers = (budget) => {
     if ((budget / burger) >= 1){
-        return budget / burger
+        return Math.floor(budget / burger);
     } else {
         return "Sorry, no burgers for you."
     }
@@ -151,9 +151,10 @@ console.log(buyBurgers(2));
 /// Write a function called buyMeals(budget) that tells the user how many meals they can buy and how much money they will have left over.
 /// Bonus: Round the answer to the nearest penny.
 const buyMeals = (budget) => {
-
+    buyamount = Math.floor(budget / (burger + soda + fries));
+    return buyamount;
 }
-
+console.log(buyMeals(40));
 
 // 17. [Challenge] Write a function missingLeg(side1, side2) that takes in the length of a hypotenuse and a leg of a right triangle and prints out the missing leg's length
 /// The larger side should be the hypotenuse  
