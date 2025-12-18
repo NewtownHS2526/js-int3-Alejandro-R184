@@ -16,27 +16,30 @@ let shoes = 89.78;
 
 
 // 1. If divided evenly, how much would each sibling get for the week?
-
+let allowance1 = weeklyAllowance / 3;
+ console.log(allowance1);// $43
 // 2. How many games can Jordan buy with their cut?
-
+ console.log(allowance1 / game);//2 games
 // 3. The cost of games just went up by a dollar and shoes are on sale at 50% (half) off. Change the variables to their new prices.
-
+game = game + 1;
+shoes = shoes/2;
 // 4. Quinn and Ricardo are twins. If they put their money together, how many on sale shoes can they buy in a month (4 weeks)?
-
+let allowance2 = allowance1 * 2;
+console.log((allowance2 * 4) / shoes);// 7 pairs of shoes
 // 5. How many more games can they buy if they put their money together compared to if they had bought games on their own?
-
+console.log((allowance2 / game)-(allowance1 / game));// 2 more games
 // 6. Print out the three siblings' names. "The three siblings are __, __, and ___."
-
+console.log(`the three siblings are ${sibling1}, ${sibling2}, and ${sibling3}.`);
 // 7. Use console.log() and a built-in method to count how many characters are in Ricardo's name.
-
+console.log(`there are ${sibling3.length} characters in ricardo's name`);
 // 8. Use console.log() and a built-in method to print out the string "RICARDO MONTOYA DE LA ROSA RAMIREZ"
-
+console.log(sibling3.toUpperCase());
 // 9. Use console.log() and a built-in method to print out the string "ricardo montoya de la rosa ramirez"
-
+console.log(sibling3.toLowerCase());
 // 10. Use console.log() and a built-in method to print out Ricardo's name, but with all the instances of the letter a removed or deleted.
-
+console.log(sibling3.replaceAll("a", ""));
 // 11. Use console.log() and a built-in method to print out "De La Rosa"
-
+console.log(sibling3.substring(16, 26));
 // Medium Challenges
 
 // 12. Rewrite these function as an arrow function.
@@ -46,12 +49,30 @@ function getRandomNum() {
     return Math.floor(Math.random() * 100);
 }
 
+const randomnumarrow = () => {
+    return Math.floor(Math.random() * 100);
+}
+
 function greeting(name) {
     return `Hello ${name}, I'm glad you can make it!`;
 }
 
+const greetarrow = (name) => {
+    return `Hello ${name}, I'm glad you can make it!`;
+}
+console.log(greetarrow("george"));
+
 function perfectRoot(x) {
     let root = Math.sqrt(x);
+    if (Math.floor(root) === root) {
+        return root;
+    } else {
+        return "No perfect root"
+    }
+}
+
+const perfectrootarrow = (x) =>{
+        let root = Math.sqrt(x);
     if (Math.floor(root) === root) {
         return root;
     } else {
@@ -65,41 +86,47 @@ function perfectRoot(x) {
 /// a. Adds 2 numbers and returns the sum
 const addNums = (x, y) => {
     let sum = x + y;
+    return sum
 }
 // uncomment the line below, to call the function, and add one more function call
-// console.log( addNums(4, 6) );
+console.log( addNums(4, 6) );
+console.log( addNums(45, 63) );
 
 
 /// b. Prints a special message if name is "Beyonce"
 const isBeyonce = (name) => {
-    if( ) { 
+    if(name === "Beyonce") { 
         return "Welcome Queen!";
     } else {
-        return `Sorry {name}, you're not Beyonce`;
+        return `Sorry ${name}, you're not Beyonce`;
     }
 }
 // Test "Beyonce" and other names to ensure it works
-
+console.log(isBeyonce("Beyonce"));
+console.log(isBeyonce("greg"));
 
 
 /// c. If the number is even, return the number divided by 2, otherwise, return the number
 /// For example reduceEvens(10) => 5 -- reduceEvens(11) => 11
 const reduceEvens = (x) => {
-    if( ){
-
+    if(x%2 === 0){
+        return x / 2
     } else {
         return x;
     }
 }
 //Write your own function calls
-
+console.log(reduceEvens(5));
+console.log(reduceEvens(10));
+console.log(reduceEvens(20));
 
 // 14. Write a function called shortenString(string) that returns the first 10 characters of a string if it is longer than 10
 //remove all
 const shortenString = (string) => {
-
+    return string.substring(0,10);
 }
-
+console.log(shortenString("five hundred"));
+console.log(shortenString("fifty"));
 
 
 // Spicy Challenges
@@ -111,8 +138,14 @@ let soda = 1.99;
 /// If no burgers can be bought, return "Sorry, no burgers for you."
 
 const buyBurgers = (budget) => {
-
+    if ((budget / burger) >= 1){
+        return budget / burger
+    } else {
+        return "Sorry, no burgers for you."
+    }
 }
+console.log(buyBurgers(20));
+console.log(buyBurgers(2));
 
 // 16. A meal consists of 1 burger, 1 fry, and 1 soda.
 /// Write a function called buyMeals(budget) that tells the user how many meals they can buy and how much money they will have left over.
