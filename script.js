@@ -152,7 +152,7 @@ console.log(buyBurgers(2));
 /// Bonus: Round the answer to the nearest penny.
 const buyMeals = (budget) => {
     buyamount = Math.floor(budget / (burger + soda + fries));
-    return buyamount;
+    return `${buyamount} meals can be bought and there will be $${Math.floor(budget - (buyamount * (burger + soda + fries)))} left over`;
 }
 console.log(buyMeals(40));
 
